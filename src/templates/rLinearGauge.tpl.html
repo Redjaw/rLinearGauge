@@ -1,0 +1,14 @@
+<div class="rLinearGauge" ng-class="theme">
+    <div class="thresholds">
+        <div class="threshold" ng-repeat="threshold in thresholds" ng-style="{'background-color':threshold.color,'width':normalizeRange(threshold)+'%'}"></div>
+    </div>
+    <div class="ticks">
+        <div class="tick" style="left:0%"></div>
+        <div class="minors">
+            <div class="tick minor" ng-repeat="tick in getMinorTicks(totalTicks) track by $index" ng-style="{'left':getTickOffset($index)}"></div>
+        </div>
+        <div class="tick" style="left:100%"></div>
+    </div>
+    <div class="pointer" ng-style="{'left':normalize(ngModel)+'%'}">
+    </div>
+</div>

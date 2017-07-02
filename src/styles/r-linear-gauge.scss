@@ -1,0 +1,72 @@
+$borderWidth: 4px;
+$tickColor  : #1f1f1f;
+
+.rLinearGauge{
+    width: calc(100% - $borderWidth);
+    position: relative;
+    border: $borderWidth solid #ccc;
+    margin-bottom: 10px;
+    .thresholds {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        z-index: 1;
+        .threshold{
+            min-height: 30px;
+        }
+    }
+    .pointer{
+        transition: left .6s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        position: absolute;
+        z-index: 3;
+        background: black;
+        display: inline-block;
+        height: 20px;
+        top: 20px;
+        width: 8px;
+        &:before {
+            border-bottom: 10px solid black;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            content: "";
+            height: 0;
+            left: 0;
+            position: absolute;
+            top: -10px;
+            width: 0;
+        }
+    }
+    .ticks {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        .tick {
+            position: absolute;
+            width: 2px; 
+            background-color: $tickColor;; 
+            height: 20px;
+            &:last-child{
+                margin-left: -2px;
+            } 
+            &.minor {
+                width: 1px; 
+                height: 10px;
+                &:nth-child(5n){
+                    height: 20px;
+                }
+                &:last-child{
+                    margin-left: -2px;
+                } 
+            }
+            span {
+                position: absolute;
+                top: 15px;
+                left: -5px;
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../src/styles/r-linear-gauge.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body ng-app="demoApp" ng-controller="mainCtrl" style="padding:8px;">
+
+    <r-linear-gauge thresholds="demoThresholds" theme="default" ng-model="demoModel" tick-number="20"></r-linear-gauge>
+
+    <div style="width:50%; display:block;margin:20px auto;">
+        <r-linear-gauge thresholds="demoThresholds" theme="default" ng-model="demoModel" tick-number="12"></r-linear-gauge>
+    </div>
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="../src/r-linear-gauge.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

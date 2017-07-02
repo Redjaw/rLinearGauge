@@ -1,0 +1,16 @@
+{
+  "name": "en-linear-gauge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "r-linear-gauge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "redjaw <davide.vernassa@gmail.com>",
+  "license": "MIT",
+  "repository" :
+  { 
+    "type" : "git",
+    "url" : "https://github.com/Redjaw/rLinearGauge.git"
+  }
+}
