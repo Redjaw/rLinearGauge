@@ -2,7 +2,7 @@ $borderWidth: 4px;
 $tickColor  : #1f1f1f;
 
 .rLinearGauge{
-    width: calc(100% - $borderWidth);
+    width: calc(100% - #{$borderWidth});
     position: relative;
     border: $borderWidth solid #ccc;
     margin-bottom: 10px;
