@@ -8,9 +8,11 @@
   },
   "author": "redjaw <davide.vernassa@gmail.com>",
   "license": "MIT",
-  "repository" :
-  { 
-    "type" : "git",
-    "url" : "https://github.com/Redjaw/rLinearGauge.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Redjaw/rLinearGauge.git"
+  },
+  "dependencies": {
+    "angular": "^1.6.4"
   }
 }
