@@ -37,8 +37,9 @@ OTHER DEALINGS IN THE SOFTWARE.*/
                 replace: true,
                 link: function(scope, elem, attr) {
                     scope.maximumValues = [],
-                        scope.minimumValues = [];
+                    scope.minimumValues = [];
                     scope.totalTicks = scope.tickNumber != undefined ? parseInt(scope.tickNumber) : 10;
+                    scope.theme = scope.theme != undefined ? scope.theme : 'default-theme';
 
                     scope.getMinorTicks = function(num) {
                         return new Array(num);
@@ -54,7 +55,8 @@ OTHER DEALINGS IN THE SOFTWARE.*/
                             })
                         }).then(function() {
                             scope.min = Math.min.apply(Math, scope.minimumValues);
-                            scope.max = Math.max.apply(Math, scope.maximumValues);
+                            scope.max =  Math.max.apply(Math, scope.maximumValues);
+                            scope.diff = scope.max-scope.min;
                         });
                         deferred.resolve();
                     };
@@ -66,11 +68,15 @@ OTHER DEALINGS IN THE SOFTWARE.*/
                     };
 
                     scope.normalize = function(value) {
-                        return (value / scope.max) * 100 + '%';
+                        if(scope.min<0){
+                            return ((value + Math.abs(scope.min)) / scope.diff) * 100 + '%';
+                        }else{
+                            return (value / scope.max) * 100 + '%';
+                        }
                     };
 
                     scope.normalizeRange = function(value) {
-                        return ((value.max - value.min) / scope.max) * 100 + '%';
+                        return ((value.max - value.min) / scope.diff) * 100 + '%';
                     };
                 }
             };

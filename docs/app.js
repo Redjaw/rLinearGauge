@@ -5,6 +5,8 @@ myApp.config(['$compileProvider', function($compileProvider) {
 }]);
 myApp.controller('mainCtrl', function($scope, $interval) {
     $scope.demoModel = 24;
+    $scope.demoModel2 = -10;
+    $scope.demoModel3 = -50;
     $scope.demoThresholds = [{
         'color': '#039BE5',
         'min': 0,
@@ -21,15 +23,15 @@ myApp.controller('mainCtrl', function($scope, $interval) {
 
     $scope.demo2Thresholds = [{
         'color': '#FFB74D',
-        'min': 0,
-        'max': 60
+        'min': -50,
+        'max': 10
     }, {
         'color': '#FFA726',
-        'min': 60,
-        'max': 80
+        'min': 10,
+        'max': 70
     }, {
         'color': '#FF9800',
-        'min': 80,
+        'min': 70,
         'max': 180
     }, {
         'color': '#FB8C00',
@@ -39,20 +41,20 @@ myApp.controller('mainCtrl', function($scope, $interval) {
 
     $scope.demo3Thresholds = [{
         'color': '#8BC34A',
-        'min': 0,
-        'max': 60
+        'min': -100,
+        'max': -80
     }, {
         'color': '#FFC107',
-        'min': 60,
-        'max': 120
+        'min': -80,
+        'max': -40
     }, {
         'color': '#F44336',
-        'min': 120,
-        'max': 180
+        'min': -40,
+        'max': -10
     }]
 
     $interval(function() {
         $scope.demoModel = Math.random() * 180;
-    }, 3000);
+    }, 5000);
 
 });
